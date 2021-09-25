@@ -37,7 +37,7 @@ public class UserController {
     }else {
     	User u = userService.registerUser(user);
     	session.setAttribute("userId", u.getId());
-    	return "redirect:/ideas";
+    	return "redirect:/dashboard";
     }
     }
 
@@ -51,7 +51,7 @@ public class UserController {
     	if(userService.authenticateUser(email, password)) {
     		User theuser = userService.findByEmail(email);
     		session.setAttribute("userId", theuser.getId());
-    		return "redirect:/ideas";
+    		return "redirect:/dashboard";
     	}else {
     		session.setAttribute("errorMessage", "Wrong Email or Password");
     		return "redirect:/";
