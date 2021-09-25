@@ -19,8 +19,8 @@ public class Like {
 	private Date updatedAt;
 	
 	@ManyToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name = "blog_id")
-	private Blog blog;
+	@JoinColumn(name = "post_id")
+	private Post post;
 
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "user_id")
@@ -63,11 +63,11 @@ public class Like {
 		this.user = user;
 	}
 	
-	//blogs
-	public Blog getBlog() {
-		return blog;
+	//posts
+	public Post getPost() {
+		return post;
 	}
-	public void setBlog(Blog blog) {
-		this.blog = blog;
+	public void setPost(Post post) {
+		this.post = post;
 	}
 }

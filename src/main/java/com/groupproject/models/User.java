@@ -54,9 +54,9 @@ public class User {
     @JoinTable(
         name = "likes", 
         joinColumns = @JoinColumn(name = "user_id"), 
-        inverseJoinColumns = @JoinColumn(name = "blog_id")
+        inverseJoinColumns = @JoinColumn(name = "post_id")
     )
-    private List<Blog> blogs;
+    private List<Post> posts;
 
     
     public User() {
