@@ -33,7 +33,7 @@ public class UserController {
     public String registerUser(@Valid @ModelAttribute("user") User user, BindingResult result, HttpSession session, Model model) {
     	userValidator.validate(user, result);
     if(result.hasErrors()) {
-    	return "index.jsp";
+    	return "/User/index.jsp";
     }else {
     	User u = userService.registerUser(user);
     	session.setAttribute("userId", u.getId());

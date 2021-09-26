@@ -1,15 +1,15 @@
 package com.groupproject.models;
 
-import java.util.Collection;
+//import java.util.Collection;
 import java.util.Date;
 import java.util.List;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotEmpty;
-import javax.validation.constraints.NotNull;
+//import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 
-import org.hibernate.annotations.CreationTimestamp;
-import org.hibernate.validator.constraints.Length;
+
 
 
 @Entity
@@ -19,19 +19,21 @@ public class Post {
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private Long id;
 	
-	@Length(min = 2, message="title must have at least 2 characters")
+	@Size(min = 2, message="title must have at least 2 characters")
 	@NotEmpty(message="title missing")
 	private String title;
 	
 	private int likes;
+	//private String comments;
 	
-	private String body;  //content area 
+	private String content;  //content area 
 	
 	
-	@Temporal(TemporalType.TIMESTAMP)
-	@CreationTimestamp
-	private Date createDate;
-	
+	@Column(updatable=false)
+    private Date createdAt;
+    private Date updatedAt;
+    
+    
 	//Relationship
 	
 	//For likes 
@@ -41,57 +43,48 @@ public class Post {
         joinColumns = @JoinColumn(name = "post_id"), 
         inverseJoinColumns = @JoinColumn(name = "user_id")
     )
-	
-	
-    private List<User> users;  //do we need this??? 
-	
+	 private List<User> users;  //do we need this??? 
 	
 //users who have  post
-	@ManyToOne
-	@JoinColumn(name="user_id", referencedColumnName = "user_id", nullable=false)
-	@NotNull
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name="user_id")
 	private User user;
 	
 	//comments 
-	@OneToMany(mappedBy = "posts", cascade = CascadeType.REMOVE)
-	private Collection<Comment> comments;
+	@OneToMany(mappedBy="post", fetch = FetchType.LAZY)
+	private List<Comment> comments;
+
 	
-	public Post() {
-		
+	public Post() {	
 	}
 	
-	
+	//getters and setters 
 	public Long getId() {
         return id;
     }
-
     public void setId(Long id) {
         this.id = id;
     }
 
+    
+    
     public String getTitle() {
         return title;
     }
-
     public void setTitle(String title) {
         this.title = title;
     }
 
-    public String getBody() {
-        return body;
+      
+    
+    public String getContent() {
+        return content;
+    }
+    public void setContent(String content) {
+        this.content = content;
     }
 
-    public void setBody(String body) {
-        this.body = body;
-    }
-
-    public Date getCreateDate() {
-        return createDate;
-    }
-
-    public void setCreateDate(Date date) {
-        this.createDate = date;
-    }
+  
 
     public User getUser() {
         return user;
@@ -101,18 +94,71 @@ public class Post {
         this.user = user;
     }
 
-    public Collection<Comment> getComments() {
+    
+	
+	public Date getCreatedAt() {
+		return createdAt;
+	}
+	public void setCreatedAt(Date createdAt) {
+		this.createdAt = createdAt;
+	}
+	
+	
+	
+	
+	public Date getUpdatedAt() {
+		return updatedAt;
+	}
+	public void setUpdatedAt(Date updatedAt) {
+		this.updatedAt = updatedAt;
+	}
+	
+	
+	
+	 //comments 
+    public List<Comment> getComments() {
         return comments;
     }
-
-    public void setComments(Collection<Comment> comments) {
+    public void setComments(List<Comment> comments) {
         this.comments = comments;
     }
+    
+    
+    
+    //likes
     public int getLikes() {
 		return likes;
 	}
 	public void setLikes(int likes) {
 		this.likes = likes;
 	}
+	
+	
+	
+	//users
+	public User getAUser() {
+        return user;
+    }
+
+    public void setAUser(User user) {
+        this.user = user;
+    }
     
+	public List<User> getUsers() {
+		return users;
+	}
+	public void setUsers(List<User> users) {
+		this.users = users;
+	}
+	
+	
+	
+	@PrePersist
+    protected void onCreate(){
+        this.createdAt = new Date();
+    }
+    @PreUpdate
+    protected void onUpdate(){
+        this.updatedAt = new Date();
+    }
 }

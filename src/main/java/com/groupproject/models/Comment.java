@@ -1,12 +1,8 @@
 package com.groupproject.models;
 
 import java.util.Date;
-
 import javax.persistence.*;
-import javax.validation.constraints.NotEmpty;
-import javax.validation.constraints.NotNull;
 
-import org.hibernate.annotations.CreationTimestamp;
 
 @Entity
 @Table(name="comments")
@@ -14,29 +10,32 @@ public class Comment {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "comment_id")
     private Long id;
 
-    @Column(name = "body", columnDefinition = "TEXT")
-    @NotEmpty(message = "*Please write something")
+
     private String body;
 
-    @Temporal(TemporalType.TIMESTAMP)
-    @Column(name = "create_date", nullable = false, updatable = false)
-    @CreationTimestamp
-    private Date createDate;
+   
+	@Column(updatable=false)
+    private Date createdAt;
+    private Date updatedAt;
 
 
-
+//relationships
+    //post can have many comments but a single comment cannot have many post( one comment cannot be found under multiple posts)
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "post_id")
-    @NotNull
     private Post post;
 
+    //users can have many comments but a single comment cannot have many users 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "user_id")
-    @NotNull
     private User user;
+    
+    public Comment() { 
+    }
+    
+    
 
     public Long getId() {
         return id;
@@ -54,14 +53,33 @@ public class Comment {
         this.body = body;
     }
 
-    public Date getCreateDate() {
-        return createDate;
+   
+    
+    public Date getCreatedAt() {
+		return createdAt;
+	}
+	public void setCreatedAt(Date createdAt) {
+		this.createdAt = createdAt;
+	}
+	
+	
+	public Date getUpdatedAt() {
+		return updatedAt;
+	}
+	public void setUpdatedAt(Date updatedAt) {
+		this.updatedAt = updatedAt;
+	}
+    
+    @PrePersist
+    protected void onCreate(){
+        this.createdAt = new Date();
     }
-
-    public void setCreateDate(Date date) {
-        this.createDate = date;
+    @PreUpdate
+    protected void onUpdate(){
+        this.updatedAt = new Date();
     }
-
+	
+    //posts
     public Post getPost() {
         return post;
     }
@@ -70,6 +88,8 @@ public class Comment {
         this.post = post;
     }
 
+    
+    //users
     public User getUser() {
         return user;
     }
@@ -77,6 +97,5 @@ public class Comment {
     public void setUser(User user) {
         this.user = user;
     }
-	
 
 }

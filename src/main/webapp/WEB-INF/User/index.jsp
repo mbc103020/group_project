@@ -29,12 +29,7 @@
     <h1>Register</h1>
     <form:errors path="user.*"/>
     <p><c:out value="${error}" /></p> 
-        <form:form  action="/registration" modelAttribute="user" method="POST" enctype="multipart/form-data">
-            <!-- <h4>
-            <form:label> Photo</form:label>
-            <input type="file" name="image"/>   
-            ----- restrictions for upload files: accept="image/png, image/jpeg" ------
-            </h4> -->
+        <form:form  action="/registration" modelAttribute="user" method="POST">
 
             <h4>
                 <form:label path="firstname">First Name:</form:label>

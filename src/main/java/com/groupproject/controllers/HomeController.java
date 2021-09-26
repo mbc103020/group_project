@@ -27,8 +27,8 @@ public class HomeController {
 	public String index(@ModelAttribute("user") User user, Model model, HttpSession session) {
 		if(session.getAttribute("errorMessage") != null) {
 			model.addAttribute("errorMessage", session.getAttribute("errorMessage"));
-			return "index.jsp";
+			return "/User/index.jsp";
 		}else
-	return "index.jsp";
+	return "/User/index.jsp";
 	}
 }

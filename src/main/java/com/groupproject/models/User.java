@@ -29,15 +29,18 @@ public class User {
     private String email;
 	
 	private String gender;
+	
 	private Date birthdate;
+	
 	private String city; 
+	
 	private String state;
+	
 	private String photo;
 	
 	@NotEmpty(message="Password missing")
 	@Size(min=8, message="Password must be greater than 8 characters")
     private String password;
-	
 	
     @Transient
     @NotEmpty(message="Confirm Password missing")
@@ -47,7 +50,9 @@ public class User {
     private Date createdAt;
     private Date updatedAt;
     
-    
+    //relationships
+    @OneToMany(mappedBy="user", fetch = FetchType.LAZY)
+    private List<Post> post;
     
     
     @ManyToMany(fetch = FetchType.LAZY)
@@ -57,6 +62,7 @@ public class User {
         inverseJoinColumns = @JoinColumn(name = "post_id")
     )
     private List<Post> posts;
+    
 
     
     public User() {
@@ -150,6 +156,15 @@ public class User {
 	public void setUpdatedAt(Date updatedAt) {
 		this.updatedAt = updatedAt;
 	}
+	
+
+//	public List<Post> getPosts() {
+//        return posts;
+//    }
+//
+//    public void setPosts(List<Post> posts) {
+//        this.posts = posts;
+//    }
 	
 	@PrePersist
     protected void onCreate(){
