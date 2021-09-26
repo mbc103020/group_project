@@ -1,0 +1,13 @@
+body {
+	text-align: center;
+	padding-top: 100px;
+}
+
+#container {
+	width: 300px;
+	height: 300px;
+	font-size: 28px;
+	text-align: left;
+	text-decoration: none;
+	margin: 100px auto;
+}
