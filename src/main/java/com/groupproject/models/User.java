@@ -18,11 +18,11 @@ public class User {
 	
 	@NotEmpty(message="Name missing")
 	@Size(min=2, max=60, message="Name must be more than 2 characters!")
-	private String firstname;
+	private String firstName;
 	
 	@NotEmpty(message="Name missing")
 	@Size(min=2, max=60, message="Name must be more than 2 characters!")
-	private String lastname;
+	private String lastName;
 	
 	@NotEmpty(message="email missing")
 	@Email(message="Email must be valid")
@@ -76,17 +76,17 @@ public class User {
 		this.id = id;
 	}
 	public String getFirstName() {
-		return firstname;
+		return firstName;
 	}
-	public void setFirstName(String firstname) {
-		this.firstname = firstname;
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
 	}
 	
 	public String getLastName() {
-		return lastname;
+		return lastName;
 	}
-	public void setLastName(String lastname) {
-		this.lastname = lastname;
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
 	}
 	
 	public String getGender() {

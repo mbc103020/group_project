@@ -8,11 +8,20 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="Description" content="Enter your description here"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    
     <title>MOOD</title>
 </head>
 <body>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
-  <div>
+  <div class="container">
+      <div class="section">
     <h1>Login</h1>
     <p><c:out value="${errorMessage}" /></p> 
     <form action="/login" method="POST">
@@ -25,20 +34,21 @@
 
 
 
-  <div>
+
+  <div class="section">
     <h1>Register</h1>
     <form:errors path="user.*"/>
     <p><c:out value="${error}" /></p> 
         <form:form  action="/registration" modelAttribute="user" method="POST">
 
             <h4>
-                <form:label path="firstname">First Name:</form:label>
-                <form:input type="text" path="firstname"/>
+                <form:label path="firstName">First Name:</form:label>
+                <form:input type="text" path="firstName"/>
             </h4>
 
             <h4>
-                <form:label path="lastname">Last Name:</form:label>
-                <form:input type="text" path="lastname"/>
+                <form:label path="lastName">Last Name:</form:label>
+                <form:input type="text" path="lastName"/>
             </h4>
         
             <h4>
