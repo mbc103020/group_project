@@ -1,13 +1,172 @@
-body {
-	text-align: center;
-	padding-top: 100px;
+* {
+	margin: 0;
+	padding: 0;
+	font-family: sans-serif;
+	background-position: center;
+background-size: cover;
 }
 
-#container {
-	width: 300px;
+h1{ text-align: center;}
+h2{
+	 text-align: center;
+	padding-top: 120px;
+	padding-bottom: 150px;
+	padding-left: 15px;
+
+}
+
+
+
+.form-box {
+
+width: 380px;
+height: 420px;
+position: relative;
+margin-top: -300px;
+
+margin-left: auto;
+margin-right: auto;
+background: white;
+
+
+overflow: hidden;
+}
+
+.button-box {
+width: 220px;
+margin: 30px auto;
+position: relative;
+box-shadow: 0 0 10px 5px rgb(106, 106, 106);
+border-radius: 30px;
+}
+
+.toggle-btn {
+color:  rgb(191, 176, 235);
+padding: 10px 30px;
+cursor: pointer;
+background: transparent;
+border: 0;
+outline: none;
+position: relative;
+font-size: 15px;
+text-align: center;
+}
+
+#btn, btn:focus {
+top: 0;
+left: 0;
+position: absolute;
+width: 110px;
+height: 100%;
+box-shadow: 0 0 0 1pt grey;
+outline: none;
+border-radius: 30px;
+transition: .5s;
+}
+
+
+
+
+.input-group {
+top: 85px;
+position: absolute;
+width: 280px;
+transition: .5s;
+}
+
+.input-field {
+color: rgb(210, 236, 247);
+width: 100%;
+padding: 10px 0;
+margin: 5px 0;
+border-left: 0;
+border-top: 0;
+border-right: 0;
+border-bottom: 1px solid #999;
+outline: none;
+background: transparent;
+}
+
+.submit-btn {
+width: 85%;
+padding: 10px 30px;
+cursor: pointer;
+display: block;
+margin: auto;
+background: linear-gradient(to right, rgb(172, 104, 208), lavender);
+border: 0;
+outline: none;
+border-radius: 30px;
+color: white;
+}
+
+
+
+#login {
+
+left: 50px;
+
+}
+
+#register {
+
+left: 450px;
+
+}
+
+
+.square {
+  width: 300px;
+  height: 300px;
+  background: black;
+  color: grey;
+  display: inline-block;
+ margin-left: 10px;
+ margin-right: 10px;
+  float: left;
+  transition: all .2s ease-out;
+}
+
+.square:hover {
+  transform: scale(1.0);
+  opacity: .5;
+  cursor: pointer;
+}
+
+.red {background:rgb(255, 128, 120); color: rgb(130, 1, 14);}
+.orange {background:rgb(194, 125, 0); color: rgb(255, 193, 142);}
+.yellow {background:rgb(255, 222, 46); color:rgb(255, 237, 139); }
+.green {background:rgb(0, 98, 2); color: rgb(148, 198, 132);}
+.blue {background:rgb(12, 62, 82); color: rgb(81, 137, 159);}
+.brown {background:rgb(51, 26, 1); color: rgb(133, 87, 56);}
+.pink{ background: rgb(93, 18, 52); color: rgb(213, 133, 170);}
+.black{background: black; color: white;}
+
+
+
+
+.marquee--inner {
 	height: 300px;
-	font-size: 28px;
-	text-align: left;
-	text-decoration: none;
-	margin: 100px auto;
+  overflow: hidden;
+  position: relative;
+  display: block;
+  width: 200%;
+
+  position: absolute;
+  animation: marquee 50s linear infinite;
+}
+
+.marquee--inner:hover {
+  animation-play-state: paused;
+}
+
+
+span {
+  float: left;
+  width: 50%;
+}
+
+@keyframes marquee {
+  0% { left: 0; }
+  100% { left: -100%; }
 }

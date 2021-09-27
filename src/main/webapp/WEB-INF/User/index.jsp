@@ -2,7 +2,6 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -22,56 +21,126 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.min.js"></script>
 
-  <div class="container">
-      <div class="section">
-    <h1>Login</h1>
-    <p><c:out value="${errorMessage}" /></p> 
-    <form action="/login" method="POST">
-   
-    <h4>Email:<input type="email" name="email"></h4>
-        <h4>Password:<input type="password" name="password"></h4>
-        <input class="btn" type="submit" value="Login">
-    </form>
-  </div>
+<h1>MOOD</h1>
+      
+        <div class="marquee--inner">
+            <div class="square"><h2>MOOD</h2></div>
+                <div class="square red"><h2>BROADCAST</h2></div>
+                <div class="square orange"><h2>LOOKBOOK</h2></div>
+                <div class="square yellow"><h2>FABRICS</h2></div>
+                <div class="square green"><h2>THE BLOGS</h2></div>
+                <div class="square blue"><h2>RUNWAY</h2></div>
+                <div class="square black">CELEB Corner</div>
+                <div class="square pink"><h2>OFFERS</h2></div>
 
+                <div class="square"><h2>MOOD</h2></div>
+                <div class="square red"><h2>BROADCAST</h2></div>
+                <div class="square brown"><h2>LOOKBOOK</h2></div>
+                <div class="square yellow"><h2>FABRICS</h2></div>
+                <div class="square green"><h2>THE BLOGS</h2></div>
+              <div class="square blue"><h2>RUNWAY</h2></div>
+              <div class="square black"><h2>CELEB Corner</h2></div>
+              <div class="square pink"><h2>OFFERS</h2></div>
 
+              <div class="square"><h2>MOOD</h2></div>
+                <div class="square red"><h2>BROADCAST</h2></div>
+                <div class="square orange"><h2>LOOKBOOK</h2></div>
+                <div class="square yellow"><h2>FABRICS</h2></div>
+                <div class="square green"><h2>THE BLOGS</h2></div>
+                <div class="square blue"><h2>RUNWAY</h2></div>
+                <div class="square black">CELEB Corner</div>
+                <div class="square pink"><h2>OFFERS</h2></div>
 
+                <div class="square"><h2>MOOD</h2></div>
+      </div>
+      
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 
-  <div class="section">
-    <h1>Register</h1>
-    <form:errors path="user.*"/>
-    <p><c:out value="${error}" /></p> 
-        <form:form  action="/registration" modelAttribute="user" method="POST">
-
-            <h4>
-                <form:label path="firstName">First Name:</form:label>
-                <form:input type="text" path="firstName"/>
-            </h4>
-
-            <h4>
-                <form:label path="lastName">Last Name:</form:label>
-                <form:input type="text" path="lastName"/>
-            </h4>
+      
+        <div class="marquee--inner">
         
-            <h4>
-                <form:label path="email">Email:</form:label>
-                <form:input type="email" path="email"/>
-            </h4>
-    
-            <h4>
-                <form:label path="password">Password:</form:label>
-                <!-- <form:errors path="password"/> -->
-                <form:password path="password"/>
-            </h4>
-            <h4>
-                <form:label path="confirmPassword">Confirm Password:</form:label>
-                <!-- <form:errors path="confirmPassword"/> -->
-                <form:password path="confirmPassword"/>
-            </h4>
-            <input type="submit" value="Register"/>
-        </form:form>
+        
+              <div class="square blue"><h2>RUNWAY</h2></div>
+              <div class="square black"><h2>CELEB Corner</h2></div>
+              <div class="square pink"><h2>OFFERS</h2></div>
+              <div class="square red"><h2>BROADCAST</h2></div>
+              <div class="square brown"><h2>LOOKBOOK</h2></div>
+              <div class="square yellow"><h2>FABRICS</h2></div>
+              <div class="square green"><h2>THE BLOGS</h2></div>
 
-    </div>
-      </div>  
+              <div class="square"><h2>MOOD</h2></div>
+              <div class="square red"><h2>BROADCAST</h2></div>
+              <div class="square orange"><h2>LOOKBOOK</h2></div>
+              <div class="square yellow"><h2>FABRICS</h2></div>
+              <div class="square green"><h2>THE BLOGS</h2></div>
+              <div class="square blue"><h2>RUNWAY</h2></div>
+              <div class="square black">CELEB Corner</div>
+              <div class="square pink"><h2>OFFERS</h2></div>
+
+              <div class="square"><h2>MOOD</h2></div>
+              <div class="square blue"><h2>RUNWAY</h2></div>
+              <div class="square black"><h2>CELEB Corner</h2></div>
+              <div class="square pink"><h2>OFFERS</h2></div>
+              <div class="square red"><h2>BROADCAST</h2></div>
+              <div class="square brown"><h2>LOOKBOOK</h2></div>
+              <div class="square yellow"><h2>FABRICS</h2></div>
+              <div class="square green"><h2>THE BLOGS</h2></div>
+
+
+              <div class="square"><h2>MOOD</h2></div>
+      </div>
+      <div class="form-box">
+        <div class="button-box">
+            <div id="btn"></div>
+          <button type="button" class="toggle-btn" onclick="login()">Login</button>
+          <button type="button" class="toggle-btn" onclick="register()">Register</button> 
+        </div>
+        
+  <!-- <p><c:out value="${errorMessage}" /></p>  -->
+  <form id ="login" class="input-group" action="/login" method="POST">
+ 
+  <input type="email" class="input-field" placeholder="email" name="email" required>  
+  <input type="password" class="input-field" placeholder="password" name="password" required>
+      <input class="submit-btn" type="submit" value="Login">
+  </form>
+
+  <!-- <form:errors path="user.*"/> -->
+  <!-- <p><c:out value="${error}" /></p>  -->
+      <form:form id="register" class="input-group" action="/registration" modelAttribute="user" method="POST">
+
+              <!-- <form:label path="firstName">First Name:</form:label> -->
+              <form:input type="text" class="input-field" placeholder="First Name" path="firstName"/>
+              <!-- <form:label path="lastName">Last Name:</form:label> -->
+              <form:input type="text" class="input-field" placeholder="Last Name" path="lastName"/>
+              <!-- <form:label path="email">Email:</form:label> -->
+              <form:input type="email" class="input-field" placeholder="email" path="email"/>
+              <!-- <form:label path="password">Password:</form:label> -->
+              <!-- <form:errors path="password"/> -->
+              <form:password class="input-field" placeholder="Password" path="password"/>
+              <!-- <form:label path="confirmPassword">Confirm Password:</form:label> -->
+              <!-- <form:errors path="confirmPassword"/> -->
+              <form:password class="input-field" placeholder="Confirm Password" path="confirmPassword"/>
+  
+          <input type="submit" class="submit-btn" value="Register"/>
+      </form:form>
+  </div>
+    
+      <script>
+        var x = document.getElementById("login");
+        var y = document.getElementById("register");
+        var z = document.getElementById("btn");
+        
+        function register() {
+        x.style.left = "-400px";
+        y.style.left = "50px";
+        z.style.left = "110px";
+        }
+        
+        function login() {
+        x.style.left = "50px";
+        y.style.left = "450px";
+        z.style.left = "0";
+        }
+        </script>
 </body>
 </html>
