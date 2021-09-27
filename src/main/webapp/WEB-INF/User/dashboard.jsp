@@ -53,7 +53,9 @@
 </div>
 
     <div class ="section">
-        
+        <img src="/images/rihanna.png" alt="rihanna"/>
+        <img src="/images/billieellish.png" alt="billieellish" />
+        <img src="/images/christinaaguliera.png" alt="christinaaguliera" />
         </div>
 
     </div>
