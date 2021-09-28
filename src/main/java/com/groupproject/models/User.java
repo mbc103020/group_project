@@ -63,13 +63,16 @@ public class User {
     )
     private List<Post> posts;
     
-    // one to many, user can have many lookbook posts
-    @OneToMany(mappedBy="lookBookPostAuthor", fetch = FetchType.LAZY)
-    private List<LookBookPost> lookBookPosts;
+    // one to many, user can have many looks
+    @OneToMany(mappedBy="lookAuthor", fetch = FetchType.LAZY)
+    private List<Look> looks;
     
-    //one to many, user can leave many lookbook post comments
+    //many to many, users can leave many looks comments
     @OneToMany(mappedBy= "userWhoCommented")
-    private List <LookBookPostComment> userComments; 
+    private List <LookComment> userComments; 
+    
+    @OneToMany(mappedBy="userWhoLiked")
+    private List<UserLookLike> allLookLikes; 
     
 	public User() {
     	
@@ -181,20 +184,28 @@ public class User {
         this.updatedAt = new Date();
     }
     
-    public List<LookBookPost> getLookBookPosts() {
-		return lookBookPosts;
+    public List<Look> getLooks() {
+		return looks;
 	}
 
-	public void setLookBookPosts(List<LookBookPost> lookBookPosts) {
-		this.lookBookPosts = lookBookPosts;
+	public void setLooks(List<Look> looks) {
+		this.looks = looks;
 	}
 
-	public List<LookBookPostComment> getUserComments() {
+	public List<LookComment> getUserComments() {
 		return userComments;
 	}
 
-	public void setUserComments(List<LookBookPostComment> userComments) {
+	public void setUserComments(List<LookComment> userComments) {
 		this.userComments = userComments;
+	}
+	
+	public List<UserLookLike> getAllLookLikes() {
+		return allLookLikes;
+	}
+
+	public void setAllLookLikes(List<UserLookLike> allLookLikes) {
+		this.allLookLikes = allLookLikes;
 	}
 	
 }
