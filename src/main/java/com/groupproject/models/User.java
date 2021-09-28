@@ -63,9 +63,15 @@ public class User {
     )
     private List<Post> posts;
     
-
+    // one to many, user can have many lookbook posts
+    @OneToMany(mappedBy="lookBookPostAuthor", fetch = FetchType.LAZY)
+    private List<LookBookPost> lookBookPosts;
     
-    public User() {
+    //one to many, user can leave many lookbook post comments
+    @OneToMany(mappedBy= "userWhoCommented")
+    private List <LookBookPostComment> userComments; 
+    
+	public User() {
     	
     }
     
@@ -174,5 +180,21 @@ public class User {
     protected void onUpdate(){
         this.updatedAt = new Date();
     }
+    
+    public List<LookBookPost> getLookBookPosts() {
+		return lookBookPosts;
+	}
+
+	public void setLookBookPosts(List<LookBookPost> lookBookPosts) {
+		this.lookBookPosts = lookBookPosts;
+	}
+
+	public List<LookBookPostComment> getUserComments() {
+		return userComments;
+	}
+
+	public void setUserComments(List<LookBookPostComment> userComments) {
+		this.userComments = userComments;
+	}
 	
 }
