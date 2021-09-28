@@ -20,6 +20,8 @@
       <a class="nav-link" href="/offers">OFFERS</a>
       <a class="nav-link" href="/celebcorner">CELEB Corner</a>
       <a class="nav-link" href="/user">Profile</a>
+      <a class="nav-link" href="/logout">Logout</a>
+
       <!-- <a class="nav-link disabled" href="#">Disabled link</a> -->
 </nav>
 </head>
@@ -50,13 +52,48 @@
     </a>
 
 </div>
+
+<div class="wrapper">
+    <div class="typing-demo">
+        KNOW YOUR STYLE.
+    </div>
+</div>
 </div>
 
     <div class ="section">
-        <img src="/images/rihanna.png" alt="rihanna"/>
-        <img src="/images/billieellish.png" alt="billieellish" />
-        <img src="/images/christinaaguliera.png" alt="christinaaguliera" />
+        <img class ="middle" src="/images/rihanna.png" alt="rihanna"/>
+        <!-- <br>
+        <img class ="middle" src="/images/billieeilish.png" alt="billieellish" />
+        <br>
+        <img class ="middle" src="/images/christiniaaguliera.png" alt="christinaaguliera" /> -->
         </div>
+
+
+        <div class="section">
+            <div id="words">
+            <h4 style="margin-left: 20px">FASHION</h4>
+            <h1 style="margin-left: -90px">MOOD</h1>
+            <h3 style="margin-left: 40px">LIFESTYLE</h3>
+        </div>
+        <div class ="divider1"></div>
+        <div class ="divider1"></div>
+        <div class ="divider1"></div>
+            <br><br><br><br><br><br>
+
+            <div class="person">   
+                <h2>FASHIONISTA</h2> 
+                <h3> OF THE WEEK </h3>
+                <div class="container2">
+                    <div class="container2-inner">
+            <img class="circle" src="/images/background.jpg" alt="background"/>
+            <img class="image img1" src="/images/christiniaaguliera.png" alt="fashionista of the week"/>
+            </div>
+            </div>
+            <div class ="divider"></div>
+            <div class="name">Diara</div>
+            <div class="title">Michigan</div>
+            </div> 
+        </div> 
 
     </div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.slim.min.js"></script>
