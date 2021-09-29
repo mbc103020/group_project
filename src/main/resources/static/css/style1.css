@@ -1,0 +1,297 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/*------------------ NAV SECTION -----------------*/
+nav { 
+font-size: 12px; 
+}
+
+a { 
+	position: relative;
+    display: inline-block;
+    padding: 25px 30px;
+    margin: 40px 0;
+    color: black;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: 0.5s;
+    letter-spacing: 4px;
+    overflow: hidden;
+    margin-right: 50px;
+}
+
+
+a:hover{
+    background: white;
+    color: black;
+}
+
+
+/*------------------ BODY SECTION -----------------*/
+body{
+   /* background: #050801; */
+    font-family: 'Raleway', sans-serif;  
+}
+
+.section{ 
+
+/*margin-left: 10px;*/
+align-items: center;
+display: inline-block;
+	width: 33%;
+	vertical-align: top;
+
+}
+
+
+#words{ 
+	margin-top: 90px;
+}
+
+#words h1{font-size: 120px;}
+#words h3{font-size: 50px;}
+#words h4{font-size: 80px;}
+
+.divider1 {
+  background-color: rgb(202, 27, 111);
+  height: 1px;
+  width: 160px;
+}
+.part{ 
+	margin-left: 90px;
+	margin-top: 100px;
+	font-weight: bold;
+}
+
+.part a{
+    position: relative;
+    /*display: inline-block;*/
+    padding: 25px 70px;
+    margin: 20px 0;
+    color: rgb(167, 90, 116);
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: 0.5s;
+    letter-spacing: 4px;
+    overflow: hidden;
+    margin-right: 50px;
+   
+}
+.part a:hover{
+    background: rgb(99, 173, 185);
+    color: rgb(37, 126, 146);
+    box-shadow: 0 0 5px rgb(17, 90, 109),
+                0 0 25px  rgb(17, 90, 109),
+                0 0 50px  rgb(17, 90, 109),
+                0 0 200px  rgb(17, 90, 109);
+     -webkit-box-reflect:below 1px linear-gradient(transparent, rgb(180, 12, 11));
+}
+.part a:nth-child(1){
+    filter: hue-rotate(270deg);
+}
+.part a:nth-child(2){
+    filter: hue-rotate(110deg);
+}
+.part a span{
+    position: absolute;
+    display: block;
+}
+.part a span:nth-child(1){
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg,transparent,rgb(187, 110, 32));
+    animation: animate1 1s linear infinite;
+}
+@keyframes animate1{
+    0%{
+        left: -100%;
+    }
+    50%,100%{
+        left: 100%;
+    }
+}
+.part a span:nth-child(2){
+    top: -100%;
+    right: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(180deg,transparent,rgb(42, 128, 147));
+    animation: animate2 1s linear infinite;
+    animation-delay: 0.25s;
+}
+@keyframes animate2{
+    0%{
+        top: -100%;
+    }
+    50%,100%{
+        top: 100%;
+    }
+}
+.part a span:nth-child(3){
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(270deg,transparent,rgb(244, 80, 219));
+    animation: animate3 1s linear infinite;
+    animation-delay: 0.50s;
+}
+@keyframes animate3{
+    0%{
+        right: -100%;
+    }
+    50%,100%{
+        right: 100%;
+    }
+}
+
+
+.part a span:nth-child(4){
+    bottom: -100%;
+    left: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(360deg,transparent,rgb(80, 244, 46));
+    animation: animate4 1s linear infinite;
+    animation-delay: 0.75s;
+}
+@keyframes animate4{
+    0%{
+        bottom: -100%;
+    }
+    50%,100%{
+        bottom: 100%;
+    }
+  }
+
+
+/*--------------------- IMAGES SECTION -------------------*/
+img { 
+	width: 370px; 
+	height: 490px;
+	padding-top: 50px;
+	padding-bottom: 50px;
+	margin-left: 30px;
+}
+
+
+/*--------------------- IMAGES SECTION(fashionista of the week) -------------------*/
+
+
+.person {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  width: 380px;
+}
+.container2 {
+  border-radius: 50%;
+  height: 312px;
+  -webkit-tap-highlight-color: transparent;
+  transform: scale(0.48);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  width: 400px;
+}
+.container2:after {
+  background-color: #f2f2f2;
+  content: "";
+  height: 10px;
+  position: absolute;
+  top: 390px;
+  width: 100%;
+}
+.container2:hover {
+  transform: scale(0.54);
+}
+.container2-inner {
+  clip-path: path(
+    "M 390,400 C 390,504.9341 304.9341,590 200,590 95.065898,590 10,504.9341 10,400 V 10 H 200 390 Z"
+  );
+  position: relative;
+  transform-origin: 50%;
+  top: -200px;
+  margin-top: 2px;
+}
+.circle {
+  background-color: #fee7d3;
+  border-radius: 50%;
+  cursor: pointer;
+  height: 380px;
+  left: 10px;
+  pointer-events: none;
+  position: absolute;
+  top: 210px;
+  width: 380px;
+}
+.image {
+  pointer-events: none;
+  position: relative;
+  transform: translateY(20px) scale(1.15);
+  transform-origin: 50% bottom;
+  transition: transform 300ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.container:hover .image {
+  transform: translateY(0) scale(1.2);
+}
+.img1 {
+  left: 22px;
+  top: 164px;
+  width: 340px;
+}
+
+.divider {
+  background-color: rgb(202, 27, 38);
+  height: 1px;
+  width: 160px;
+}
+.name {
+  color: #404245;
+  font-size: 36px;
+  font-weight: 600;
+  margin-top: 16px;
+  text-align: center;
+}
+.title {
+  color: #6e6e6e;
+  font-family: arial;
+  font-size: 14px;
+  font-style: italic;
+  margin-top: 4px;
+}
+/*--------------------- TYPING -------------------*/
+
+.wrapper {
+  height: 100vh;
+  /*This part is important for centering*/
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.typing-demo{
+	margin-left: 20px;
+  width: 82ch;
+  animation: typing 4s steps(22), blink .5s step-end infinite alternate;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 3px solid;
+  font-family: monospace;
+  font-size: 35px;
+}
+
+@keyframes typing {
+  from {
+    width: 0
+  }
+}
+    
+@keyframes blink {
+  50% {
+    border-color: transparent
+  }
+  }

@@ -18,6 +18,6 @@ public class MoodController {
 	
 	@RequestMapping("/dashboard")  //jazmine working on view
 	public String dashboard() {
-		return "dashboard.jsp";
+		return "/User/dashboard.jsp";
 	}
 }
