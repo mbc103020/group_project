@@ -5,7 +5,6 @@ import javax.validation.constraints.Email;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.Size;
 
-
 import java.util.*;
 
 @Entity
@@ -50,7 +49,7 @@ public class User {
     private Date createdAt;
     private Date updatedAt;
     
-    //relationships
+    //relationships - posts
     @OneToMany(mappedBy="user", fetch = FetchType.LAZY)
     private List<Post> post;
     
@@ -62,8 +61,18 @@ public class User {
         inverseJoinColumns = @JoinColumn(name = "post_id")
     )
     private List<Post> posts;
-    
 
+    //relationships - offers
+    @OneToMany(fetch=FetchType.LAZY, mappedBy="planner")
+    private List<Offer> offerPosted;
+    
+    @ManyToMany(fetch=FetchType.LAZY)
+    @JoinTable(
+		name="users_offers",
+		joinColumns = @JoinColumn(name="user_id"),
+		inverseJoinColumns = @JoinColumn(name="offer_id")
+	)
+    private List<Offer> offersAppliedTo;
     
     public User() {
     	
