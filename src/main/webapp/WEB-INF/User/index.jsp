@@ -126,7 +126,7 @@
               <form:password class="input-field" placeholder="Password" path="password"/>
               <!-- <form:label path="confirmPassword">Confirm Password:</form:label> -->
               <form:errors path="confirmPassword"/>
-
+            </form:form>
   <p><c:out value="${error}" /></p> 
       <form:form id="register" class="input-group" action="/registration" modelAttribute="user" method="POST">
 
