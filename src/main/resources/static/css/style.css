@@ -75,7 +75,8 @@ transition: .5s;
 }
 
 .input-field {
-color: rgb(210, 236, 247);
+color: rgb(0, 0, 0);
+font-family: georgia;;
 width: 100%;
 padding: 10px 0;
 margin: 5px 0;
