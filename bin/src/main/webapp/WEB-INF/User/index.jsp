@@ -96,56 +96,31 @@
           <button type="button" class="toggle-btn" onclick="register()">Register</button> 
         </div>
         
-<<<<<<< HEAD
-  
-=======
-  <p><c:out value="${errorMessage}" /></p> 
->>>>>>> 6fe2ab599bb0d0c1c7863a976f7eb527d03c237c
+  <!-- <p><c:out value="${errorMessage}" /></p>  -->
   <form id ="login" class="input-group" action="/login" method="POST">
  
   <input type="email" class="input-field" placeholder="email" name="email" required>  
   <input type="password" class="input-field" placeholder="password" name="password" required>
-  <p><c:out value="${errorMessage}" /></p> 
-<input class="submit-btn" type="submit" value="Login">
+      <input class="submit-btn" type="submit" value="Login">
   </form>
 
   <!-- <form:errors path="user.*"/> -->
-<<<<<<< HEAD
-  
-      <form:form id="register" class="input-group" action="/registration" modelAttribute="user" method="POST" style="font-size: 10px">
-
-              <!-- <form:label path="firstName">First Name:</form:label> -->
-              <form:errors path="firstName"/>
-              <form:input type="text" class="input-field" placeholder="First Name" path="firstName"/>
-              <!-- <form:label path="lastName">Last Name:</form:label> -->
-              <form:errors path="lastName"/>
-              <form:input type="text" class="input-field" placeholder="Last Name" path="lastName"/>
-              <!-- <form:label path="email">Email:</form:label> -->
-              <form:errors path="email"/>
-              <form:input type="email" class="input-field" placeholder="email" path="email"/>
-              <!-- <form:label path="password">Password:</form:label> -->
-              <form:errors path="password"/>
-              <form:password class="input-field" placeholder="Password" path="password"/>
-              <!-- <form:label path="confirmPassword">Confirm Password:</form:label> -->
-              <form:errors path="confirmPassword"/>
-=======
-  <p><c:out value="${error}" /></p> 
+  <!-- <p><c:out value="${error}" /></p>  -->
       <form:form id="register" class="input-group" action="/registration" modelAttribute="user" method="POST">
 
-              <form:label path="firstName"></form:label>
+              <!-- <form:label path="firstName">First Name:</form:label> -->
               <form:input type="text" class="input-field" placeholder="First Name" path="firstName"/>
-              <form:label path="lastName"></form:label>
+              <!-- <form:label path="lastName">Last Name:</form:label> -->
               <form:input type="text" class="input-field" placeholder="Last Name" path="lastName"/>
-              <form:label path="email"></form:label>
+              <!-- <form:label path="email">Email:</form:label> -->
               <form:input type="email" class="input-field" placeholder="email" path="email"/>
-              <form:label path="password"></form:label>
+              <!-- <form:label path="password">Password:</form:label> -->
               <!-- <form:errors path="password"/> -->
               <form:password class="input-field" placeholder="Password" path="password"/>
-              <form:label path="confirmPassword"></form:label>
+              <!-- <form:label path="confirmPassword">Confirm Password:</form:label> -->
               <!-- <form:errors path="confirmPassword"/> -->
->>>>>>> 6fe2ab599bb0d0c1c7863a976f7eb527d03c237c
               <form:password class="input-field" placeholder="Confirm Password" path="confirmPassword"/>
-              <p><c:out value="${error}" /></p> 
+  
           <input type="submit" class="submit-btn" value="Register"/>
       </form:form>
   </div>
