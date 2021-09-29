@@ -62,6 +62,7 @@ public class User {
     )
     private List<Post> posts;
 
+
     //relationships - offers
     @OneToMany(fetch=FetchType.LAZY, mappedBy="planner")
     private List<Offer> offerPosted;
@@ -73,8 +74,21 @@ public class User {
 		inverseJoinColumns = @JoinColumn(name="offer_id")
 	)
     private List<Offer> offersAppliedTo;
+
     
-    public User() {
+    // one to many, user can have many looks
+    @OneToMany(mappedBy="lookAuthor", fetch = FetchType.LAZY)
+    private List<Look> looks;
+    
+    //many to many, users can leave many looks comments
+    @OneToMany(mappedBy= "userWhoCommented")
+    private List <LookComment> userComments; 
+
+    
+    @OneToMany(mappedBy="userWhoLiked")
+    private List<UserLookLike> allLookLikes; 
+    
+	public User() {
     	
     }
     
@@ -183,5 +197,29 @@ public class User {
     protected void onUpdate(){
         this.updatedAt = new Date();
     }
+    
+    public List<Look> getLooks() {
+		return looks;
+	}
+
+	public void setLooks(List<Look> looks) {
+		this.looks = looks;
+	}
+
+	public List<LookComment> getUserComments() {
+		return userComments;
+	}
+
+	public void setUserComments(List<LookComment> userComments) {
+		this.userComments = userComments;
+	}
+	
+	public List<UserLookLike> getAllLookLikes() {
+		return allLookLikes;
+	}
+
+	public void setAllLookLikes(List<UserLookLike> allLookLikes) {
+		this.allLookLikes = allLookLikes;
+	}
 	
 }
