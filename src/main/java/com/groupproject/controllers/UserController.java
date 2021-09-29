@@ -63,4 +63,9 @@ public class UserController {
 		session.invalidate();
 		return "redirect:/";
 	}
+    
+    @RequestMapping("/profile")
+    public String profile() { 
+    	return "/User/profile.jsp";
+    }
 }

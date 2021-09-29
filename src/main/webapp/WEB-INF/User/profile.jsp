@@ -24,6 +24,24 @@
 </nav>
 </head>
 <body>
-
+<!-- Left Panel  -->
+<div class="left-panel container3">
+<div class="menu-box block">
+    <h2 class="title">MENU</h2>
+    <ul class="menu-box-menu">
+        <a class="menu-box-tab" href="#6"><span class="icon fontawesome-envelope scnd-font-color"></span>Messages<div class="menu-box-number">24</div></a>                            
+                        </li>
+                        <li>
+                            <a class="menu-box-tab" href="#8"><span class="icon entypo-paper-plane scnd-font-color"></span>Invites<div class="menu-box-number">3</div></a>                            
+                        </li>
+                        <li>
+                            <a class="menu-box-tab" href="#10"><span class="icon entypo-calendar scnd-font-color"></span>Events<div class="menu-box-number">5</div></a>                            
+                        </li>
+                        <li>
+                            <a class="menu-box-tab" href="#12"><span class="icon entypo-cog scnd-font-color"></span>Account Settings</a>
+                        </li>
+    </ul>
+</div>
+</div>
 </body>
 </html>
