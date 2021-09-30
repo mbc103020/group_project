@@ -96,6 +96,8 @@
           <button type="button" class="toggle-btn" onclick="register()">Register</button> 
         </div>
 
+        
+
   <form id ="login" class="input-group" action="/login" method="POST">
  
   <input type="email" class="input-field" placeholder="email" name="email" required>  
