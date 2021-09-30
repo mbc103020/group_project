@@ -95,9 +95,6 @@
           <button type="button" class="toggle-btn" onclick="login()">Login</button>
           <button type="button" class="toggle-btn" onclick="register()">Register</button> 
         </div>
-        
-
-  <p><c:out value="${errorMessage}" /></p> 
 
   <form id ="login" class="input-group" action="/login" method="POST">
  
