@@ -26,8 +26,14 @@
 <body>
 <!-- Left Panel  -->
 <div class="left-panel container3">
+    <div class="profile">
+        <div class="profile-pic">
+            <img src="http://placehold.">
+            </div>
+            <h4 class="user-name"> [USER NAME HERE]</h4>
+            
+        </div>
 <div class="menu-box block">
-    <h2 class="title">MENU</h2>
     <ul class="menu-box-menu">
         <a class="menu-box-tab" href="#6"><span class="icon fontawesome-envelope scnd-font-color"></span>Messages<div class="menu-box-number">24</div></a>                            
             </li>
@@ -44,13 +50,19 @@
     </div>
 </div>
 <div class="middle-panel container3">
-    <div class="profile">
-        <div class="profile-pic">
-            <img src="http://placehold.">
-            </div>
-            <h2 class="user-name"> [USER NAME HERE]</h2>
-            
-        </div>
+   <h4>Settings</h4>
+   <form id="edit" class="input-group" action="/edit" modelAttribute="user" method="POST" style="font-size: 10px">
+    <input type="text" class="input-field" placeholder="first name" name="firstName">  
+    <input type="text" class="input-field" placeholder="last name" name="lastName">  
+    <input type="email" class="input-field" placeholder="email" name="email" >  
+    <select class="input-field" placeholder="gender" name="gender" id="gender">
+        <option value="Female">Female</option>
+        <option value="Male">Male</option>
+        <option value="Other">Other</option>
+        </select>
+              
+          <input type="submit" class="submit-btn" value="Update"/>
+      </form>
     </div> 
 </div>
 </body>
