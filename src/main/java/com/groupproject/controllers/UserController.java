@@ -64,7 +64,7 @@ public class UserController {
 		return "redirect:/";
 	}
     
-    @RequestMapping("/profile")
+    @RequestMapping("/user")
     public String profile() { 
     	return "/User/profile.jsp";
     }
