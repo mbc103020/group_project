@@ -30,7 +30,7 @@
         <div class="profile-pic">
             <img src="http://placehold.">
             </div>
-            <h4 class="user-name"> [USER NAME HERE]</h4>
+            <h4 class="user-name" c:out value="${ user.firstName }">, MOOD</h4>
             <!-- <button class="btn" onclick="changeColor()"> MY MOOD </button> -->
         </div>
 <div class="menu-box block">

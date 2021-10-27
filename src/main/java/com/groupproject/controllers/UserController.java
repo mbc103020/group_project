@@ -67,7 +67,7 @@ public class UserController {
 	}
     
     @RequestMapping("/user")
-    public String profile(@ModelAttribute("user") User user, Model model) { 
+    public String profile(@ModelAttribute("user") User user, Model model, HttpSession session) { 
     	model.addAttribute("states", states);
     	return "/User/profile.jsp";
     }
