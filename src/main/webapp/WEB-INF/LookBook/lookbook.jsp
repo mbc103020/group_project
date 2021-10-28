@@ -24,13 +24,38 @@
 </nav>
 </head>
 <body>
-	<c:forEach items="${looks} var="look">
+	<form:form id="addLook" action="/addLook" modelAttribute="look" enctype="mulitipart/form-data" method="POST">
+		<form:label path="title"></form:label>     <!-- entype="multipart/form-data" tells browser this form may have a file upload, accept means only accept these types of files -->
+		<form:input type="text" placeholder="Look Title" path="title"/>
 		<div>
-			<c:out value="${look.title}"/>
-			
-
+			<form:label path="imageName"></form:label>
+			<form:input type="file" name="image" path="imageName" accept="image/png, image/jpeg" />
 		</div>
-	</c:forEach>
+		<input type="submit" value="Upload File" />
+
+	</form:form>
+
+<!--	<div>
+		<c:forEach items="{files}" var="file">
+		<ul>
+			<li>
+				<c:out value="${file}"/>
+			</li>
+
+		</ul>
+		</c:forEach>
+	</div>
+	
+		<div class="container">
+			<c:forEach items="${looks} var="look">
+				<div class="lookbook">
+
+				</div>
+				<c:out value="${look.title}"/>
+			</c:forEach>
+			
+		</div>   -->
+	
 
 
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.slim.min.js"></script>
