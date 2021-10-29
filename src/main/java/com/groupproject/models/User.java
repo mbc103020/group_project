@@ -64,10 +64,12 @@ public class User {
 
 
     //relationships - offers
-    @OneToMany(fetch=FetchType.LAZY, mappedBy="planner")
+    	//one user can make many offers 
+    @OneToMany(fetch=FetchType.LAZY, mappedBy="employer")
     private List<Offer> offerPosted;
     
-    @ManyToMany(fetch=FetchType.LAZY)
+    	//many users can apply to many offers
+	@ManyToMany(fetch=FetchType.LAZY)
     @JoinTable(
 		name="users_offers",
 		joinColumns = @JoinColumn(name="user_id"),
@@ -220,6 +222,22 @@ public class User {
 
 	public void setAllLookLikes(List<UserLookLike> allLookLikes) {
 		this.allLookLikes = allLookLikes;
+	}
+	
+	public List<Offer> getOfferPosted() {
+		return offerPosted;
+	}
+
+	public void setOfferPosted(List<Offer> offerPosted) {
+		this.offerPosted = offerPosted;
+	}
+
+	public List<Offer> getOffersAppliedTo() {
+		return offersAppliedTo;
+	}
+
+	public void setOffersAppliedTo(List<Offer> offersAppliedTo) {
+		this.offersAppliedTo = offersAppliedTo;
 	}
 	
 }

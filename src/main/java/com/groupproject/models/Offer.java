@@ -18,6 +18,7 @@ import javax.persistence.PrePersist;
 import javax.persistence.PreUpdate;
 import javax.persistence.Table;
 import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
 
 import org.springframework.format.annotation.DateTimeFormat;
 
@@ -33,7 +34,7 @@ public class Offer {
 	private String city;
 	@NotEmpty
 	private String state;
-	@NotEmpty
+	@NotNull
 	private Long rate; //$$
 	@NotEmpty
 	private String company;
@@ -56,10 +57,12 @@ public class Offer {
     
     //all the users who applied for this offer
     private List<User> applicants;
+    
     // how many ppl have applied
     private int applicantCount = 0;
     
     //CONSTRUCTOR
+    public Offer() {}
 	public Offer(Long id, String title,  String city,  String state,  Long rate, String company) {
 		this.id = id;
 		this.title = title;
