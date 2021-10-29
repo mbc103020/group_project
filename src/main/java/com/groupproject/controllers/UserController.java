@@ -8,6 +8,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -70,5 +71,31 @@ public class UserController {
     public String profile(@ModelAttribute("user") User user, Model model, HttpSession session) { 
     	model.addAttribute("states", states);
     	return "/User/profile.jsp";
+    }
+    
+    @RequestMapping("/user/posts")
+    public String postings(@ModelAttribute("user") User user, Model model, HttpSession session) { 
+    	return "/User/upost.jsp";
+    }
+    
+    @PostMapping("/user/update/{userId}")
+    public String updateUser(@PathVariable("userId")Long id, @Valid User user, BindingResult result ) { 
+    	if(result.hasErrors()) { 
+    		return String.format("redirect:/User/profile.jsp", id);
+    	}else {
+    		userService.updateUser(id, user);
+    		return "redirect:/";
+    	}
+    }
+    
+    @RequestMapping("/user/edit/{userId}")
+    public String editUser(@PathVariable("userId") Long id, Model model) { 
+    	User user = userService.findUserById(id);
+    	if(user != null) { 
+    		model.addAttribute("user", user);
+    		return "/User/profile.jsp";
+    	}else {
+    		return "redirect:/User/";
+    	}
     }
 }
