@@ -5,7 +5,6 @@ import javax.validation.constraints.Email;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.Size;
 
-
 import java.util.*;
 
 @Entity
@@ -50,7 +49,7 @@ public class User {
     private Date createdAt;
     private Date updatedAt;
     
-    //relationships
+    //relationships - posts
     @OneToMany(mappedBy="user", fetch = FetchType.LAZY)
     private List<Post> post;
     
@@ -62,6 +61,22 @@ public class User {
         inverseJoinColumns = @JoinColumn(name = "post_id")
     )
     private List<Post> posts;
+
+
+    //relationships - offers
+    	//one user can make many offers 
+    @OneToMany(fetch=FetchType.LAZY, mappedBy="employer")
+    private List<Offer> offerPosted;
+    
+    	//many users can apply to many offers
+	@ManyToMany(fetch=FetchType.LAZY)
+    @JoinTable(
+		name="users_offers",
+		joinColumns = @JoinColumn(name="user_id"),
+		inverseJoinColumns = @JoinColumn(name="offer_id")
+	)
+    private List<Offer> offersAppliedTo;
+
     
     // one to many, user can have many looks
     @OneToMany(mappedBy="lookAuthor", fetch = FetchType.LAZY)
@@ -70,6 +85,7 @@ public class User {
     //many to many, users can leave many looks comments
     @OneToMany(mappedBy= "userWhoCommented")
     private List <LookComment> userComments; 
+
     
     @OneToMany(mappedBy="userWhoLiked")
     private List<UserLookLike> allLookLikes; 
@@ -206,6 +222,22 @@ public class User {
 
 	public void setAllLookLikes(List<UserLookLike> allLookLikes) {
 		this.allLookLikes = allLookLikes;
+	}
+	
+	public List<Offer> getOfferPosted() {
+		return offerPosted;
+	}
+
+	public void setOfferPosted(List<Offer> offerPosted) {
+		this.offerPosted = offerPosted;
+	}
+
+	public List<Offer> getOffersAppliedTo() {
+		return offersAppliedTo;
+	}
+
+	public void setOffersAppliedTo(List<Offer> offersAppliedTo) {
+		this.offersAppliedTo = offersAppliedTo;
 	}
 	
 }
