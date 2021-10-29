@@ -95,6 +95,7 @@
           <button type="button" class="toggle-btn" onclick="login()">Login</button>
           <button type="button" class="toggle-btn" onclick="register()">Register</button> 
         </div>
+
         
 
   <form id ="login" class="input-group" action="/login" method="POST">
@@ -107,20 +108,29 @@
 
   <!-- <form:errors path="user.*"/> -->
 
-  <p><c:out value="${error}" /></p> 
-      <form:form id="register" class="input-group" action="/registration" modelAttribute="user" method="POST">
+  
+      <form:form id="register" class="input-group" action="/registration" modelAttribute="user" method="POST" style="font-size: 10px">
 
               <form:label path="firstName"></form:label>
+              <form:errors path="firstName"/>
               <form:input type="text" class="input-field" placeholder="First Name" path="firstName"/>
+
+
               <form:label path="lastName"></form:label>
+              <form:errors path="lastName"/>
               <form:input type="text" class="input-field" placeholder="Last Name" path="lastName"/>
+
               <form:label path="email"></form:label>
+              <form:errors path="email"/>
               <form:input type="email" class="input-field" placeholder="email" path="email"/>
+
               <form:label path="password"></form:label>
-              <!-- <form:errors path="password"/> -->
+              <form:errors path="password"/>
               <form:password class="input-field" placeholder="Password" path="password"/>
+
               <form:label path="confirmPassword"></form:label>
-              <!-- <form:errors path="confirmPassword"/> -->
+
+              <form:errors path="confirmPassword"/>
               <form:password class="input-field" placeholder="Confirm Password" path="confirmPassword"/>
               <p><c:out value="${error}" /></p> 
           <input type="submit" class="submit-btn" value="Register"/>
