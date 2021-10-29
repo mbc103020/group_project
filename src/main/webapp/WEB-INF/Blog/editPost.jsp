@@ -11,7 +11,7 @@
 <meta name="Description" content="Enter your description here"/>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-<link rel="stylesheet" href="/css/style1.css"> 
+<link rel="stylesheet" href="/css/style1.css">
 <link rel="stylesheet" href="/css/style2.css">
 
 <title>MOOD</title>
@@ -56,9 +56,9 @@
         </div>
     </div> -->
     <h3>Fashion Blog</h3>
-    <p>Submit a blog post</p>
+    <p>Edit Your Post</p>
     <div id="blogForm">
-       <form:form id="newBlogPost" action="/newBlogPost" modelAttribute="post" method="POST">
+       <form:form id="updatePost" action="/updatePost/${post.id}" modelAttribute="post" method="POST">
         <form:label path="title"></form:label>
         <form:input type="text" placeholder="Title" path="title"/>
 
@@ -70,26 +70,6 @@
         </form:form>
     </div>
     
-    <div class="blogposts">
-    	<c:forEach items="${posts}" var="post">
-    		<div class="post">
-                <h2 class="post-title">
-                    <a class="like" href="/likePost/${post.id}">Like</a>
-                    <c:out value="${post.title}"/> 
-         <!--         <c:if test = "${post.user == loggedInUser}"> 
-                            <p><a href="/updatePost/${post.id}"></a>
-                            <a href="/deletePost/${post.id}"><button>Delete Post</button></a></p>
-                     </c:if> -->
-                </h2>
-                <div class="post-content">
-                    <p><c:out value="${post.content}"/></p>
-                    <p class="post-author">Author: <c:out value="${post.user.firstName}"/> <c:out value="${post.user.lastName}"/></p>
-                </div>
-                    <p><a href="/editPost/${post.id}"><button>Update Post</button></a><a href="/deletePost/${post.id}"><button>Delete Post</button></a> </p> 
-                
-    		</div>
-    	</c:forEach>
-    </div> 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.slim.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.min.js"></script>

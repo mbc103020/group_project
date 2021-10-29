@@ -1,0 +1,40 @@
+/*----BlOG SECTION-----*/
+.blogPosts{
+	box-sizing: border-box;
+}
+#newBlogPost{
+	width: 100%; 
+	
+}
+.post{
+	  display: flex;
+  	  width: 700px;
+  	  height: 300px; 
+ 	  margin: 50px auto;
+  	 box-shadow: 0 5px 15px 0 #777;
+	
+}
+
+.post-content{
+	letter-spacing: 1px;
+  	line-height: 1.33;
+  	text-align: center;
+}
+
+#blogForm{
+	 box-sizing: border-box;
+	 display: flex;
+  	 width: 100%;
+ 	 margin: 50px auto;
+  	 box-shadow: 0 5px 15px 0 #777;
+	
+}
+
+.like{
+	width: 100px; 
+	font-size: 20px; 
+	text-align: center; 
+	margin-left: 10px; 
+	
+}
+

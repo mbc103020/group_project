@@ -24,5 +24,31 @@ public class PostService {
 		}
 	}
 	
+	public Post createPost(Post post) {
+		return postRepository.save(post); 
+	}
+	
+	public void save(Post post) {
+		this.postRepository.save(post); 
+	}
+	
+	public Post updatePost(Long id, Post postUpdate) {
+		Post post = this.findPostById(id); 
+		if(post!= null) {
+			post.setTitle(postUpdate.getTitle());
+			post.setContent(postUpdate.getContent());
+			this.save(post);
+			return post; 
+		}
+		return null; 
+	}
+	
+	public void deletePost(Long id) {
+		Optional<Post> optionalPost = postRepository.findById(id); 
+		if(optionalPost.isPresent()) {
+			postRepository.deleteById(id);
+		}
+	}
+	
 
 }
